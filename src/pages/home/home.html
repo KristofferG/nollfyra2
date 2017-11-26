@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button menuToggle ion-button icon-only style="color:white">
+        <ion-icon name="ios-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>N0LLFYRA</ion-title>
+    <ion-buttons end>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="smog {{alcoStatus(alco).code}}" style="background:url(assets/imgs/clouds.png) 25% 100% repeat-x">
+  </div>
+  <div class="pollution-back {{alcoStatus(alco).code}}" style="">
+    <div class="pollution-time">{{statusText}}</div>
+    <div class="pollution-value">{{alcoRound}}&permil;</div>
+
+    <div class="aqi-extra" padding style="left:0" align="left">
+      Vikt: {{weight}}kg<br>
+      Öl: {{beers}}<br>
+      <ion-icon range-left name="timer"></ion-icon> sen första ölen: {{time}}h<br>
+    </div>
+    <div class="aqi-extra" padding style="right:0">
+      &nbsp;
+    </div>
+  </div>
+  <div>
+    <div>
+      <ion-item>
+        <ion-range min="55" max="110" value="77" pin="true" [(ngModel)]="weight" color="secondary">
+          <ion-icon range-left small name="man"></ion-icon>
+          <ion-icon range-right name="man"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="0" max="12" step="1" snaps="true" [(ngModel)]="beers">
+          <ion-icon range-left name="beer"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="0.0" max="12.0" step="0,5" snaps="true" [(ngModel)]="time">
+          <ion-icon range-left name="timer"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <div class="knapp">
+        <button ion-button round color="primary" (click)="testKlick()">Kontrollera</button>
+      </div>
+    </div>
+
+
+  </div>
+</ion-content>

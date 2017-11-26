@@ -1,0 +1,8 @@
+{
+  "name": "nollfyra",
+  "app_id": "cf9def2a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
